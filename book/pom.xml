@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<!-- <parent> <artifactId>zuul-gateway-demo</artifactId> <groupId>com.sinosoft</groupId> 
+		<version>1.0</version> </parent> -->
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>zuul-gateway-demo</artifactId>
+		<groupId>com.sinosoft</groupId>
+		<version>1.0</version>
+	</parent>
+	<artifactId>book</artifactId>
+
+	<!-- 继承spring boot -->
+
+
+	<packaging>jar</packaging>
+	<!-- 设置属性编码与版本 -->
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.7</java.version>
+	</properties>
+	<!--设置打包时包的名称 -->
+	<build>
+		<!-- 打成jar包的名称 -->
+		<finalName>gateway</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<mainClass>com.sinosoft.book.BookApplication</mainClass>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<!--用于提供web服务(servlet容器) -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.json-lib</groupId>
+			<artifactId>json-lib</artifactId>
+			<version>2.4</version>
+			<classifier>jdk15</classifier>
+		</dependency>
+		<!-- 移除嵌入式tomcat插件避免与发布后的环境冲突 -->
+		<!-- <dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-tomcat</artifactId> 
+			<scope>provided</scope> </dependency> -->
+		<!--自动重启或自动关闭缓存等功能于开发很有用 -->
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<optional>true</optional>
+		</dependency>
+	</dependencies>
+	<!-- nohup java -Xmx512M -Xms512M -Djava.security.egd=/home/gateway -jar gateway.jar > /dev/null 2>&1 & -->
+
+</project>
