@@ -37,10 +37,10 @@ public class CustomRouteLocator extends SimpleRouteLocator implements Refreshabl
     }
 
     //父类已经提供了这个方法，这里写出来只是为了说明这一个方法很重要！！！
-//    @Override
-//    protected void doRefresh() {
-//        super.doRefresh();
-//    }
+    @Override
+    protected void doRefresh() {
+        super.doRefresh();
+    }
 
 
     @Override

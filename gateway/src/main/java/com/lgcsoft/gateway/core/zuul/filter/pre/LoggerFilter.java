@@ -7,20 +7,20 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Component;
 
-import com.lgcsoft.gateway.core.zuul.FilterType;
 import com.netflix.zuul.context.RequestContext;
 
 @Component
 public class LoggerFilter extends AbstractPreZuulFilter {
 
+	public static final int FILTER_ORDER = 5;
 	@Override
 	public String filterType() {
-		return FilterType.post.name();
+		return "pre";
 	}
 
 	@Override
 	public int filterOrder() {
-		return this.filterOrder() - 1;
+		return FILTER_ORDER;
 	}
 
 	@Override
@@ -39,17 +39,18 @@ public class LoggerFilter extends AbstractPreZuulFilter {
 		// 请求的参数
 		String paramsStr = params.toString();
 		// 请求的开始时间
-		long statrtTime = (long) context.get("startTime");
+		//long statrtTime = (long) context.get("startTime");
+		//statrtTime = System.currentTimeMillis();
 		// 请求的异常，如果有的话
-		Throwable throwable = context.getThrowable();
+		//Throwable throwable = context.getThrowable();
 		// 请求的uri
-		request.getRequestURI();
+		//request.getRequestURI();
 		// 请求的iP地址
 		// HttpUtils.getIpAddress(request);
 		// 请求的状态
-		context.getResponseStatusCode();
+		//context.getResponseStatusCode();
 		// 请求耗时
-		long duration = System.currentTimeMillis() - statrtTime;
+		//long duration = System.currentTimeMillis() - statrtTime;
 
 		return null;
 	}

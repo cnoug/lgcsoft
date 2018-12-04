@@ -28,7 +28,7 @@ public class ServerLoadBalancerRule extends AbstractLoadBalancerRule {
 
     @Value("${server.host:127.0.0.1}")
     private String host;
-    @Value("${server.port:8080}")
+    @Value("${server.port:8090}")
     private Integer port;
 
     @Autowired

@@ -21,8 +21,9 @@ import com.lgcsoft.gateway.core.zuul.FilterOrder;
 import com.netflix.zuul.context.RequestContext;
 
 /**
- * Created by shenyuhang on 2018/06/29.
- **/
+ * @author liugc@neusoft.com
+ *
+ */
 public class TokenAccessFilter extends AbstractPreZuulFilter {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(TokenAccessFilter.class);
@@ -134,7 +135,7 @@ public class TokenAccessFilter extends AbstractPreZuulFilter {
             }
         }
         //添加Basic Auth认证信息
-        ctx.addZuulRequestHeader("Authorization", "Basic " + getBase64Credentials("app01", "*****"));
+        //ctx.addZuulRequestHeader("Authorization", "Basic " + getBase64Credentials("app01", "*****"));
         return success();
     }
     /**

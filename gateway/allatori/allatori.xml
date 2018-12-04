@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<input>
+		<jar in="gateway-0.0.1-SNAPSHOT.jar" out="gateway-0.0.1-SNAPSHOT-obfuscated.jar" />
+	</input>
+
+	<keep-names>
+		<class access="protected+">
+			<field access="protected+" />
+			<method access="protected+" />
+		</class>
+	</keep-names>
+
+	<property name="log-file" value="log.xml" />
+	<ignore-classes>
+		<class template="class *springframework*" />
+		<class template="class *shardingjdbc*" />
+		<class template="class *jni*" />
+		<class template="class *alibaba*" />
+		<class template="class *persistence*" />
+		<!-- 排除如下两个包下的类 -->
+		<class template="class com.lgcsoft.dao.*" />
+		<class template="class com.lgcsoft.entity.*" />
+	</ignore-classes>
+</config>
+

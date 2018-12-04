@@ -21,7 +21,11 @@ public class UserRightFilter extends AbstractPreZuulFilter {
     public int filterOrder() {
         return FilterOrder.USER_RIGHT_ORDER;
     }
-
+    
+	@Override
+	public boolean shouldFilter() {
+		return false;
+	}
     @Override
     public Object doRun() {
 

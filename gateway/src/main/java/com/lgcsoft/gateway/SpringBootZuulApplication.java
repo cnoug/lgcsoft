@@ -32,13 +32,16 @@ import net.sf.json.JSONObject;
  * @author  liugc@neusoft.com
  * @date    2018-11-08
  */
-@RestController
 @EnableAutoConfiguration
 @EnableZuulProxy
 @ComponentScan(basePackages = {
         "com.lgcsoft.gateway.core",
-        "com.lgcsoft.gateway.service"
+        "com.lgcsoft.gateway.service",
+        "com.lgcsoft.gateway.event",
+        "com.lgcsoft.gateway.web",
+        "com.lgcsoft.gateway.dao"
 })
+@RestController
 public class SpringBootZuulApplication implements CommandLineRunner {
 	
 	private Logger logger = LoggerFactory.getLogger(getClass());

@@ -8,6 +8,8 @@ import org.springframework.cloud.netflix.zuul.filters.RouteLocator;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 
+import com.lgcsoft.gateway.core.zuul.router.AbstractDynamicRouter;
+
 /**
  * Created by xujingfeng on 2017/4/1.
  */
@@ -18,8 +20,10 @@ public class RefreshRouteService {
     @Autowired
     ApplicationEventPublisher publisher;
 
+    
+    //RouteLocator routeLocator;
     @Autowired
-    RouteLocator routeLocator;
+    AbstractDynamicRouter routeLocator;
 
     public void refreshRoute() {
         RoutesRefreshedEvent routesRefreshedEvent = new RoutesRefreshedEvent(routeLocator);

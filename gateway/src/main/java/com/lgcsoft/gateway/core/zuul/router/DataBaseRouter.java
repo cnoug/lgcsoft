@@ -15,7 +15,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import com.lgcsoft.gateway.core.zuul.entity.BasicRoute;
 
 /**
- * Created by shenyuhang on 2018/07/02.
+ * Created by liugc@neusoft.com on 2018/11/02.
  **/
 public class DataBaseRouter extends AbstractDynamicRouter {
 
